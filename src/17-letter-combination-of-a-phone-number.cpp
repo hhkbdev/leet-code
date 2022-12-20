@@ -9,9 +9,18 @@ class Solution {
 			if (digits.empty()) {
 				return result;
 			}
-			std::vector<std::string> dict = {"abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-			std::string path;
-			dfs(digits, 0, dict, path, result);
+			std::vector<std::string> mapping = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+			result.push_back("");
+			for (int i = 0; i < digits.size(); i++) {
+				std::vector<std::string> temp;
+				std::string letters = mapping[digits[i] - '0'];
+				for (int j = 0; j < letters.size(); j++) {
+					for (int k = 0; k < result.size(); k++) {
+						temp.push_back(result[k] + letters[j]);
+					}
+				}
+				result = temp;
+			}
 			return result;
 		}
 };
