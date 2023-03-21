@@ -4,30 +4,24 @@
 class Solution {
 	public:
 		int strStr(std::string haystack, std::string needle) {
-			if (needle.empty()) {
-				return 0;
-			}
-			if (haystack.empty()) {
-				return -1;
-			}
-			int i = 0;
-			int j = 0;
-			int k = 0;
-			while (i < haystack.size()) {
-				if (haystack[i] == needle[j]) {
-					if (j == 0) {
-						k = i;
-					}
-					j++;
-					if (j == needle.size()) {
-						return k;
-					}
-				} else {
-					j = 0;
-				}
-				i++;
-			}
-			return -1;
+            if (needle.empty()) return 0;
+            if (haystack.empty()) return -1;
+            if (haystack.size() < needle.size()) return -1;
+            int i = 0;
+            int j = 0;
+            while (i < haystack.size()) {
+                if (haystack[i] == needle[j]) {
+                    if (j == needle.size() - 1) {
+                        return i - j;
+                    }
+                    ++i;
+                    ++j;
+                } else {
+                    i = i - j + 1;
+                    j = 0;
+                }
+            }
+            return -1;
 		}
 };
 
