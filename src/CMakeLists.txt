@@ -9,5 +9,5 @@
 
 #add_executable(${PROJECT_NAME} 31-next-permutation.cpp)
 
-add_library(31-next-permutation.cpp)
-#add_executable(MyLibrary 31-next-permutation.cpp)
+#add_library(31-next-permutation.cpp)
+add_executable(MyLibrary 31-next-permutation.cpp)
