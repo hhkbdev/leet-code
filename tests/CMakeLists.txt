@@ -1,14 +1,14 @@
-#find_package(GTest REQUIRED)
-#include_directories(${GTEST_INCLUDE_DIRS})
-#
-#add_executable(MyTest test_code.cpp)
-#
-#target_link_libraries(MyTest PRIVATE MyLibrary ${GTEST_LIBRARIES})
+# download and add googletest
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG release-1.12.0
+)
+FetchContent_MakeAvailable(googletest)
 
-enable_testing()
 
-add_executable(test_code test_code.cpp)
-target_link_libraries(test_code GTest::gtest_main)
+file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
-include(GoogleTest)
-gtest_discover_tests(test_code)
+add_executable(shape_test ${SRC_FILES})
+target_link_libraries(shape_test PRIVATE shape gtest gmock gtest_main)
