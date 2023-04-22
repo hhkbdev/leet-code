@@ -37,16 +37,7 @@ tags
 *.dSYM
 
 # CMake
-CMakeCache.txt
-CMakeFiles
+cmake-build-debug/
+CMakeFiles/
+MakeFile
 cmake_install.cmake
-Makefile
-CTestTestfile.cmake
-CMakeScripts
-install_manifest.txt
-CTestCustom.cmake
-Testing
-*.cmake
-*.cmake.in
-*.cmake.in~*
-_deps

@@ -1,11 +1,10 @@
-//
-// Created by 김영준 on 2023/04/22.
-//
-
 #include "main.h"
 #include <iostream>
+#include "shape.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    shape::Rectangle rect(10, 30);
+    rect.Print();
+//    std::cout << "Hello, World!" << std::endl;
     return 0;
 }

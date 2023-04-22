@@ -5,11 +5,9 @@
 
 namespace shape {
     namespace {
-
         TEST(ShapeTest, RectangleSize) {
-        Rectangle rect(10, 2);
-        EXPECT_EQ(rect.GetSize(), 20);
+            Rectangle rect(10, 2);
+            EXPECT_EQ(rect.GetSize(), 20);
+        }
     }
-
-}
 }
