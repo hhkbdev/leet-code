@@ -5,6 +5,6 @@
 int main() {
     shape::Rectangle rect(10, 30);
     rect.Print();
-//    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Hello, World!" << std::endl;
     return 0;
 }

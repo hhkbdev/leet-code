@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.24)
 
 # Project information
 project(
-        MyProject
+        LeetCodeProject
         VERSION 1.0
-        DESCRIPTION "My project"
+        DESCRIPTION "Leet code project"
         LANGUAGES CXX
         )
 
