@@ -10,5 +10,5 @@ FetchContent_MakeAvailable(googletest)
 
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
-add_executable(shape_test ${SRC_FILES})
-target_link_libraries(shape_test PRIVATE shape gtest gmock gtest_main)
+add_executable(${PROJECT_NAME}_test ${SRC_FILES})
+target_link_libraries(${PROJECT_NAME}_test PRIVATE custom_library gtest gmock gtest_main)

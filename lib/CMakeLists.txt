@@ -2,16 +2,16 @@
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 # create static library
-add_library(shape STATIC ${SRC_FILES})
+add_library(custom_library STATIC ${SRC_FILES})
 
 # include directory for header files
-target_include_directories(shape PUBLIC ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(custom_library PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 # compile options
-target_compile_options(shape PRIVATE -Wall -Werror)
+target_compile_options(custom_library PRIVATE -Wall -Werror)
 
 # compile features
-target_compile_features(shape PRIVATE cxx_std_17)
+target_compile_features(custom_library PRIVATE cxx_std_17)
 
 # fmt 라이브러리를 불러온다.
 include(FetchContent)
@@ -23,4 +23,4 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Fmt)
 
 # fmt 라이브러리를 링크한다.
-target_link_libraries(shape PRIVATE fmt)
+target_link_libraries(custom_library PRIVATE fmt)
